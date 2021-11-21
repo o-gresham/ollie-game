@@ -6,6 +6,8 @@ export default class Game {
         this.gameWidth = gameWidth;
         this.gameHeight = gameHeight;
         this.mouseX = 0;
+        this.clearAll = false;
+        this.drawing = false;
         this.UI = new UI(this);
         new InputHandler(this);
     }
@@ -16,5 +18,15 @@ export default class Game {
 
     draw(ctx) {
         this.UI.draw(ctx);
+        if (this.clearAll) {
+            ctx.fillStyle = "#000"
+            ctx.clearRect(0, 0, this.gameWidth, this.gameHeight);
+            ctx.fillRect(0, 0, this.gameWidth, this.gameHeight);
+            this.clearAll = false;
+        }
+    }
+
+    clearScreen() {
+        this.clearAll = true;
     }
 }

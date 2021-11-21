@@ -3,8 +3,8 @@ import Game from './game';
 import Canvas from './Canvas';
 
 function App() {
-  const GAME_WIDTH = 800;
-  const GAME_HEIGHT = 600;
+  const GAME_WIDTH = window.innerWidth;
+  const GAME_HEIGHT = window.innerHeight;
   const options = { 
     context: '2d'
   }
@@ -12,8 +12,6 @@ function App() {
 
   const draw = (ctx) => {
     ctx.fillStyle = '#000'
-    ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-    ctx.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
     game.draw(ctx);
   }
 

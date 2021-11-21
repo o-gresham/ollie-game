@@ -32,11 +32,12 @@ const useCanvas = (draw, options) => {
     render();
 
     return () => {
-      window.cancelAnimationFrame(animationFrameId);
+      window.cancelAnimationFrame(animationFrameId);      
     };
   }, [draw]);
 
   return canvasRef;
 };
+
 
 export default useCanvas;
