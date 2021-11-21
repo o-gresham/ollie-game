@@ -9,8 +9,9 @@ export default class Game {
         this.UI = new UI(this);
         new InputHandler(this);
     }
-    updateMouse(x) {
+    updateMouse(x, y) {
         this.mouseX = x
+        this.mouseY = y
     }
 
     draw(ctx) {
